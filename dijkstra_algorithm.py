@@ -1,6 +1,4 @@
 import sys
-from graph_builder import init_graph
-from UI import print_result
 
 
 def dijkstra_algorithm(graph, start_node):
@@ -43,11 +41,3 @@ def dijkstra_algorithm(graph, start_node):
         unvisited_nodes.remove(current_min_node)
 
     return previous_nodes, shortest_path
-
-
-start_node = 'Oslo'
-target_node = "Belgrade"
-
-previous_nodes, shortest_path = dijkstra_algorithm(graph=init_graph(), start_node=start_node)
-
-print_result(previous_nodes, shortest_path, start_node=start_node, target_node=target_node)
