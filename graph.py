@@ -1,23 +1,7 @@
 class Graph(object):
     def __init__(self, nodes: list, edges: dict):
         self.nodes = nodes
-        self.graph = self.construct_graph(nodes, edges)
-
-    def construct_graph(self, nodes: list, edges):
-        """
-        Этот метод обеспечивает симметричность графика. Для неориентированного графа
-        """
-        graph = {}
-        for node in nodes:
-            graph[node] = {}
-
-        graph.update(edges)
-
-        for node, edges in graph.items():
-            for adjacent_node, value in edges.items():
-                if not graph[adjacent_node].get(node, False):
-                    graph[adjacent_node][node] = value
-        return graph
+        self.graph = edges
 
     def get_nodes(self):
         return self.nodes
