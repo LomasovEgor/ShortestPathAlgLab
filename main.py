@@ -1,4 +1,4 @@
-from pyvis.network import Network, Edge
+from pyvis.network import Network
 from network_data import NetworkData
 
 network = Network('600px', '600px', notebook=True, )
