@@ -1,24 +1,8 @@
 from graph import Graph
 import json
 
-# nodes = ["Reykjavik", "Oslo", "Moscow", "London", "Rome", "Berlin", "Belgrade", "Athens"]
-#
-# edges = {}
-# for node in nodes:
-#     edges[node] = {}
-#
-# edges["Reykjavik"]["Oslo"] = 5
-# edges["Reykjavik"]["London"] = 4
-# edges["Oslo"]["Berlin"] = 1
-# edges["Oslo"]["Moscow"] = 3
-# edges["Moscow"]["Belgrade"] = 5
-# edges["Moscow"]["Athens"] = 4
-# edges["Athens"]["Belgrade"] = 1
-# edges["Rome"]["Berlin"] = 2
-# edges["Rome"]["Athens"] = 2
 
-
-class MetroBuilder:
+class Metro:
     def __init__(self):
         self.metro = Graph()
 
@@ -53,7 +37,8 @@ class MetroBuilder:
         return graph
 
     def add_edge(self, station1: str, station2: str, value: int):
-        self.metro.edges.update({station1: {station2: value}})
+        dic = {f'{station1}': {station2: value}}
+        self.metro.edges.update(dic)
 
     def get_metro(self):
         return self.metro
