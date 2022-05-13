@@ -4,7 +4,7 @@ from UI import StationEnterWin
 
 
 def main():
-    with open('testMetro.Json', 'r', encoding='utf-8') as file:
+    with open('Saint-Petersburg_Metro_graph.json', 'r', encoding='utf-8') as file:
         metro = json.load(file)
     stations: list = metro['nodes']
     edges: dict = metro['edges']
@@ -14,5 +14,5 @@ def main():
     StationEnterWin(stations, graph)
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     main()
