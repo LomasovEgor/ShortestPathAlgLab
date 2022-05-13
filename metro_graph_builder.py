@@ -41,8 +41,8 @@ class Metro:
         self.add_single_edge(station2, station1, value)
 
     def add_single_edge(self, station1: str, station2: str, value: int):
-        dic = {f'{station1}': {station2: value}}
-        self.metro.edges.update(dic)
+        dic = {f'{station2}': value}
+        self.metro.edges[station1].update(dic)
 
     def get_metro(self):
         return self.metro
