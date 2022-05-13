@@ -37,6 +37,10 @@ class Metro:
         return graph
 
     def add_edge(self, station1: str, station2: str, value: int):
+        self.add_single_edge(station1, station2, value)
+        self.add_single_edge(station2, station1, value)
+
+    def add_single_edge(self, station1: str, station2: str, value: int):
         dic = {f'{station1}': {station2: value}}
         self.metro.edges.update(dic)
 
